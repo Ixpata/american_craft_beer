@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @beer.name %>
+</p>
+
+<p>
+  <b>Taste:</b>
+  <%=h @beer.taste %>
+</p>
+
+<p>
+  <b>Vibe:</b>
+  <%=h @beer.vibe %>
+</p>
+
+<p>
+  <b>Buzz:</b>
+  <%=h @beer.buzz %>
+</p>
+
+
+<%= link_to 'Edit', edit_beer_path(@beer) %> |
+<%= link_to 'Back', beers_path %>

@@ -1,0 +1,35 @@
+<STYLE type=text/css>
+A:link {
+ COLOR: red }
+A:visited {
+ COLOR: pink}
+A:hover {
+ COLOR: green }
+BODY { COLOR: blue } 
+</STYLE>
+<h1>Beers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Taste</th>
+    <th>Vibe</th>
+    <th>Buzz</th>
+  </tr>
+
+<% @beers.each do |beer| %>
+  <tr>
+    <td><%=h beer.name %></td>
+    <td><%=h beer.taste %></td>
+    <td><%=h beer.vibe %></td>
+    <td><%=h beer.buzz %></td>
+    <td><%= link_to 'Show', beer %></td>
+    <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
+    <td><%= link_to 'Destroy', beer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New beer', new_beer_path %>

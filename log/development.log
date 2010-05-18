@@ -1,0 +1,1054 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBeers (20100512010033)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "beers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "taste" varchar(255), "vibe" varchar(255), "buzz" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100512010033')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("beers")[0m
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-11 21:01:24) [GET]
+  [4;36;1mBeer Load (0.4ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 31ms (View: 26, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-11 21:01:27) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#create (for 127.0.0.1 at 2010-05-11 21:02:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"swJyPbBy7RsniIkAcZNNwSbCdOhzXuZ//VIQSUO1XxM=", "beer"=>{"name"=>"Anchor Steam", "vibe"=>"Good for the soul", "taste"=>"Hooray", "buzz"=>"I can still see"}}
+  [4;35;1mBeer Create (0.9ms)[0m   [0mINSERT INTO "beers" ("name", "created_at", "vibe", "taste", "updated_at", "buzz") VALUES('Anchor Steam', '2010-05-12 01:02:39', 'Good for the soul', 'Hooray', '2010-05-12 01:02:39', 'I can still see')[0m
+Redirected to http://localhost:3000/beers/1
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-11 21:02:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBeer Load (0.2ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/beers/1]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-11 21:02:52) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 12:07:18) [GET]
+  [4;36;1mBeer Load (0.9ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 69ms (View: 64, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-12 12:07:25) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 97ms (View: 92, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:33:21) [GET]
+  [4;36;1mBeer Load (1.0ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 57ms (View: 52, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:33:21) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-12 21:33:34) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 53ms (View: 48, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#show to jpg (for 127.0.0.1 at 2010-05-12 21:33:34) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+  [4;35;1mBeer Load (0.1ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Beer with ID=americancraftbeer):
+  app/controllers/beers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (113.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:34:46) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:34:46) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:34:48) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:34:48) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:34:48) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:34:48) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:35:46) [GET]
+  [4;35;1mBeer Load (0.6ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:35:47) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:40:12) [GET]
+  [4;36;1mBeer Load (0.6ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 85ms (View: 15, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:40:14) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:43:03) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:43:30) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:44:14) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:46:26) [GET]
+  [4;35;1mBeer Load (0.7ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:46:26) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:46:27) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:46:27) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:46:28) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:46:28) [GET]
+
+ActionController::RoutingError (No route matches "/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-12 21:46:36) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#show to jpg (for 127.0.0.1 at 2010-05-12 21:46:36) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+  [4;36;1mBeer Load (0.1ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Beer with ID=americancraftbeer):
+  app/controllers/beers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-12 21:46:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBeer Load (0.2ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 237ms (View: 164, DB: 0) | 200 OK [http://localhost/beers/1]
+
+
+Processing BeersController#show to jpg (for 127.0.0.1 at 2010-05-12 21:46:42) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+  [4;36;1mBeer Load (0.1ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Beer with ID=americancraftbeer):
+  app/controllers/beers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:05) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:07) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:08) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:09) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:10) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:11) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:12) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:48:12) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 74ms (View: 70, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-12 21:48:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:49:35) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-12 21:51:15) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:37:18) [GET]
+  [4;35;1mBeer Load (0.9ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:41:29) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:41:33) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:42:32) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 79ms (View: 74, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:42:34) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:43:50) [GET]
+  [4;36;1mBeer Load (0.6ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-13 00:44:01) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:45:52) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:45:54) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:48:02) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:49:52) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 77ms (View: 72, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-13 00:50:34) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-13 00:50:42) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 19:13:03) [GET]
+
+ActionController::RoutingError (No route matches "/loves" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:13:09) [GET]
+  [4;36;1mBeer Load (30.6ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 410ms (View: 372, DB: 31) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-17 19:13:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBeer Load (0.2ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 30ms (View: 25, DB: 0) | 200 OK [http://localhost/beers/1]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:13:36) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 19:13:38) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:13:48) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 78ms (View: 74, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:20:57) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 19:20:57) [GET]
+
+ActionController::RoutingError (No route matches "/Users/sm/Downloads/americancraftbeer.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:21:43) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:26:03) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:26:59) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:00) [GET]
+  [4;36;1mBeer Load (0.6ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:01) [GET]
+  [4;35;1mBeer Load (0.6ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:02) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:56) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:57) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:27:58) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:30:07) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:30:45) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 19:30:58) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:31:45) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 83ms (View: 78, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:34:20) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:34:44) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-17 19:53:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBeer Load (0.2ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/beers/1]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 19:54:05) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-17 19:54:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBeer Load (0.2ms)[0m   [0;1mSELECT * FROM "beers" WHERE ("beers"."id" = 1) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/beers/1]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 19:54:24) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:55:01) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:55:02) [GET]
+  [4;36;1mBeer Load (65.4ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 76ms (View: 7, DB: 65) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:55:03) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:55:09) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:55:26) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:37) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:38) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:38) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:40) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:40) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:40) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:40) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 19:58:41) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:04:53) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 20:04:53) [GET]
+
+ActionController::RoutingError (No route matches "/sg_americancraftbeercom_media/exteriortile.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:05:29) [GET]
+  [4;35;1mBeer Load (1.1ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 20:05:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/sg_americancraftbeercom_media/exteriortile.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:05:30) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 20:05:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/sg_americancraftbeercom_media/exteriortile.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:06:10) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:07:48) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:07:49) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:09:49) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:10:00) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:11:12) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 81ms (View: 76, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:11:30) [GET]
+  [4;35;1mBeer Load (0.6ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:11:31) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:12:16) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:12:17) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:12:17) [GET]
+  [4;35;1mBeer Load (0.6ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:12:18) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:12:46) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 79ms (View: 75, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:13:18) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#images to jpg (for 127.0.0.1 at 2010-05-17 20:13:18) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:13:38) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#images to jpg (for 127.0.0.1 at 2010-05-17 20:13:38) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:13:41) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#images to jpg (for 127.0.0.1 at 2010-05-17 20:13:41) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:13:45) [GET]
+  [4;36;1mBeer Load (0.6ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:13:46) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:13:47) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 75ms (View: 6, DB: 0) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:13:49) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#images to jpg (for 127.0.0.1 at 2010-05-17 20:13:49) [GET]
+  Parameters: {"id"=>"americancraftbeer"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:14:12) [GET]
+  [4;35;1mBeer Load (0.5ms)[0m   [0mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:14:14) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
+
+
+Processing BeersController#create (for 127.0.0.1 at 2010-05-17 20:14:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"tYkrNPHIIKEv/WKdOUHDiJ4LvAxVS91+UY0TUHxcaT8=", "beer"=>{"name"=>"", "vibe"=>"", "taste"=>"", "buzz"=>""}}
+  [4;36;1mBeer Create (16.7ms)[0m   [0;1mINSERT INTO "beers" ("name", "created_at", "vibe", "taste", "updated_at", "buzz") VALUES('', '2010-05-18 00:14:21', '', '', '2010-05-18 00:14:21', '')[0m
+Redirected to http://localhost:3000/beers/2
+Completed in 39ms (DB: 17) | 302 Found [http://localhost/beers]
+
+
+Processing BeersController#show (for 127.0.0.1 at 2010-05-17 20:14:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mBeer Load (0.3ms)[0m   [0mSELECT * FROM "beers" WHERE ("beers"."id" = 2) [0m
+Rendering template within layouts/beers
+Rendering beers/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/beers/2]
+
+
+Processing BeersController#index (for 127.0.0.1 at 2010-05-17 20:14:24) [GET]
+  [4;36;1mBeer Load (0.5ms)[0m   [0;1mSELECT * FROM "beers" [0m
+Rendering template within layouts/beers
+Rendering beers/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/beers]
+
+
+Processing BeersController#new (for 127.0.0.1 at 2010-05-17 20:14:27) [GET]
+Rendering template within layouts/beers
+Rendering beers/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/beers/new]
